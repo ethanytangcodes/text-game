@@ -148,11 +148,7 @@
         .click(() => Engine.toggleVolume())
         .appendTo(menu);
 
-      $('<span>')
-        .addClass('appStore menuBtn')
-        .text(_('get the app.'))
-        .click(Engine.getApp)
-        .appendTo(menu);
+    
 
       $('<span>')
         .addClass('lightsOff menuBtn')
@@ -184,21 +180,8 @@
         .click(Engine.exportImport)
         .appendTo(menu);
 
-      if(this.options.dropbox && Engine.Dropbox) {
-        this.dropbox = Engine.Dropbox.init();
+    
 
-        $('<span>')
-          .addClass('menuBtn')
-          .text(_('dropbox.'))
-          .click(Engine.Dropbox.startDropbox)
-          .appendTo(menu);
-      }
-
-      $('<span>')
-        .addClass('menuBtn')
-        .text(_('github.'))
-        .click(function() { window.open('https://github.com/doublespeakgames/adarkroom'); })
-        .appendTo(menu);
 
       // Register keypress handlers
       $('body').off('keydown').keydown(Engine.keyDown);
